@@ -15,7 +15,7 @@ workflows:
         XCODE_SCHEME: "UlamaNacional"
 
     integrations:
-      app_store_connect: codemagic
+      app_store_connect: Viktoriya Kravchenko
 
     scripts:
       - name: Set up code signing

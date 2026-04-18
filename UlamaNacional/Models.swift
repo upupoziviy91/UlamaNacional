@@ -84,6 +84,7 @@ struct ScoreState: Codable, Equatable {
     var rallies = 0
     var targetScore = 15
     var servingHome = true
+    var pointHistory: [Bool] = []
 
     enum CodingKeys: String, CodingKey {
         case homeName
@@ -93,6 +94,7 @@ struct ScoreState: Codable, Equatable {
         case rallies
         case targetScore
         case servingHome
+        case pointHistory
     }
 
     init() {}
@@ -106,5 +108,6 @@ struct ScoreState: Codable, Equatable {
         rallies = try container.decodeIfPresent(Int.self, forKey: .rallies) ?? 0
         targetScore = try container.decodeIfPresent(Int.self, forKey: .targetScore) ?? 15
         servingHome = try container.decodeIfPresent(Bool.self, forKey: .servingHome) ?? true
+        pointHistory = try container.decodeIfPresent([Bool].self, forKey: .pointHistory) ?? []
     }
 }

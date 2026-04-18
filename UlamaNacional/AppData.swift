@@ -188,6 +188,7 @@ final class MatchStore: ObservableObject {
         }
         score.rallies += 1
         score.servingHome = toHome
+        score.pointHistory.append(toHome)
     }
 
     func toggleServer() {
@@ -196,20 +197,28 @@ final class MatchStore: ObservableObject {
 
     func undoPoint() {
         guard score.rallies > 0 else { return }
-        if score.homeScore >= score.awayScore, score.homeScore > 0 {
-            score.homeScore -= 1
+
+        if let lastPointWasHome = score.pointHistory.popLast() {
+            if lastPointWasHome {
+                score.homeScore = max(0, score.homeScore - 1)
+            } else {
+                score.awayScore = max(0, score.awayScore - 1)
+            }
+            score.servingHome = score.pointHistory.last ?? true
+        } else if score.homeScore >= score.awayScore, score.homeScore > 0 {
+            score.homeScore = max(0, score.homeScore - 1)
         } else if score.awayScore > 0 {
-            score.awayScore -= 1
+            score.awayScore = max(0, score.awayScore - 1)
         }
-        score.rallies -= 1
+        score.rallies = max(0, score.rallies - 1)
     }
 
     func saveMatch() {
         let log = MatchLog(
             id: UUID(),
             date: Date(),
-            homeName: score.homeName.isEmpty ? "Jaguar" : score.homeName,
-            awayName: score.awayName.isEmpty ? "Ceiba" : score.awayName,
+            homeName: cleanTeamName(score.homeName, fallback: "Jaguar"),
+            awayName: cleanTeamName(score.awayName, fallback: "Ceiba"),
             homeScore: score.homeScore,
             awayScore: score.awayScore
         )
@@ -218,12 +227,15 @@ final class MatchStore: ObservableObject {
         score.awayScore = 0
         score.rallies = 0
         score.servingHome = true
+        score.pointHistory = []
     }
 
     func resetCurrentMatch() {
         score.homeScore = 0
         score.awayScore = 0
         score.rallies = 0
+        score.servingHome = true
+        score.pointHistory = []
     }
 
     func clearHistory() {
@@ -238,5 +250,10 @@ final class MatchStore: ObservableObject {
     private func saveLogs() {
         guard let data = try? JSONEncoder().encode(logs) else { return }
         UserDefaults.standard.set(data, forKey: logsKey)
+    }
+
+    private func cleanTeamName(_ value: String, fallback: String) -> String {
+        let trimmed = value.trimmingCharacters(in: .whitespacesAndNewlines)
+        return trimmed.isEmpty ? fallback : trimmed
     }
 }

@@ -14,6 +14,9 @@ workflows:
         XCODE_PROJECT: "UlamaNacional.xcodeproj"
         XCODE_SCHEME: "UlamaNacional"
 
+    integrations:
+      app_store_connect: codemagic
+
     scripts:
       - name: Set up code signing
         script: |
@@ -28,3 +31,8 @@ workflows:
     artifacts:
       - build/ios/ipa/*.ipa
       - /tmp/xcodebuild_logs/*.log
+
+    publishing:
+      app_store_connect:
+        auth: integration
+        submit_to_testflight: true

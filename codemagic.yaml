@@ -6,24 +6,25 @@ workflows:
 
     environment:
       xcode: latest
+      ios_signing:
+        distribution_type: app_store
+        bundle_identifier: com.sports.ulama.nacional
+
       vars:
         XCODE_PROJECT: "UlamaNacional.xcodeproj"
         XCODE_SCHEME: "UlamaNacional"
-        BUNDLE_ID: "com.sports.ulama.nacional"
 
     scripts:
-      - name: Show Xcode version
-        script: xcodebuild -version
-
-      - name: List schemes
+      - name: Set up code signing
         script: |
-          xcodebuild -list -project "$XCODE_PROJECT"
+          xcode-project use-profiles
 
-      - name: Build project check
+      - name: Build IPA
         script: |
-          xcodebuild build \
-            -project "$XCODE_PROJECT" \
-            -scheme "$XCODE_SCHEME" \
-            -destination 'generic/platform=iOS Simulator'
+          xcode-project build-ipa \
+            --project "$XCODE_PROJECT" \
+            --scheme "$XCODE_SCHEME"
+
     artifacts:
+      - build/ios/ipa/*.ipa
       - /tmp/xcodebuild_logs/*.log

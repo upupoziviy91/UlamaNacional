@@ -30,9 +30,11 @@ struct MatchCenterView: View {
                     SectionTitle(title: language == .portugueseBrazil ? "Histórico" : "History", detail: language == .portugueseBrazil ? "Partidas salvas neste dispositivo." : "Matches saved on this device.")
 
                     if store.logs.isEmpty {
-                        ContentUnavailableView(language == .portugueseBrazil ? "Nenhuma partida salva" : "No saved matches", systemImage: "clock.badge.questionmark", description: Text(language == .portugueseBrazil ? "Salve o primeiro placar quando o jogo terminar." : "Save the first score when the game ends."))
-                            .foregroundStyle(BrandPalette.white)
-                            .padding(.vertical, 20)
+                        EmptyStateCard(
+                            title: language == .portugueseBrazil ? "Nenhuma partida salva" : "No saved matches",
+                            systemImage: "clock.badge.questionmark",
+                            detail: language == .portugueseBrazil ? "Salve o primeiro placar quando o jogo terminar." : "Save the first score when the game ends."
+                        )
                     } else {
                         VStack(spacing: 10) {
                             ForEach(store.logs) { log in

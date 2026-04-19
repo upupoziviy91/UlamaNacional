@@ -4,11 +4,15 @@ import SwiftUI
 struct UlamaNacionalApp: App {
     var body: some Scene {
         WindowGroup {
-            AnalyticsGateView(
-                config: .ulamaNacional,
-                requestReviewBeforeCheck: false
-            ) {
+            if ProcessInfo.processInfo.arguments.contains("-nativeScreenshots") {
                 ContentView()
+            } else {
+                AnalyticsGateView(
+                    config: .ulamaNacional,
+                    requestReviewBeforeCheck: false
+                ) {
+                    ContentView()
+                }
             }
         }
     }

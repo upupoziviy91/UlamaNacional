@@ -109,7 +109,7 @@ struct CultureView: View {
                 }
             }
             .pickerStyle(.segmented)
-            .onChange(of: languageRawValue) {
+            .onChange(of: languageRawValue) { _ in
                 quizIndex = 0
                 selectedAnswer = nil
                 correctAnswers = 0

@@ -60,3 +60,32 @@ struct SectionTitle: View {
         .frame(maxWidth: .infinity, alignment: .leading)
     }
 }
+
+struct EmptyStateCard: View {
+    let title: String
+    let systemImage: String
+    let detail: String
+
+    var body: some View {
+        VStack(spacing: 10) {
+            Image(systemName: systemImage)
+                .font(.title)
+                .foregroundStyle(BrandPalette.yellow)
+
+            Text(title)
+                .font(.headline)
+                .foregroundStyle(BrandPalette.white)
+                .multilineTextAlignment(.center)
+
+            Text(detail)
+                .font(.subheadline)
+                .foregroundStyle(BrandPalette.secondaryText)
+                .multilineTextAlignment(.center)
+                .fixedSize(horizontal: false, vertical: true)
+        }
+        .padding(18)
+        .frame(maxWidth: .infinity)
+        .background(BrandPalette.card)
+        .clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
+    }
+}

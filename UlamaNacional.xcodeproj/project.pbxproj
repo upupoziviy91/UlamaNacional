@@ -20,6 +20,15 @@
 		010000000000000000000112 /* BrandPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010000000000000000000013 /* BrandPalette.swift */; };
 		010000000000000000000113 /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010000000000000000000014 /* Localization.swift */; };
 		010000000000000000000121 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 010000000000000000000124 /* InfoPlist.strings */; };
+		010000000000000000000128 /* AnalyticsContentRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010000000000000000000137 /* AnalyticsContentRenderer.swift */; };
+		010000000000000000000129 /* AnalyticsLaunchClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010000000000000000000138 /* AnalyticsLaunchClient.swift */; };
+		010000000000000000000130 /* AnalyticsLaunchConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010000000000000000000139 /* AnalyticsLaunchConfig.swift */; };
+		010000000000000000000131 /* AnalyticsGateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010000000000000000000140 /* AnalyticsGateView.swift */; };
+		010000000000000000000132 /* AnalyticsLauncherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010000000000000000000141 /* AnalyticsLauncherView.swift */; };
+		010000000000000000000133 /* AnalyticsPresentationStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010000000000000000000142 /* AnalyticsPresentationStyle.swift */; };
+		010000000000000000000134 /* AnalyticsSurfaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010000000000000000000143 /* AnalyticsSurfaceView.swift */; };
+		010000000000000000000135 /* AnalyticsSessionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010000000000000000000144 /* AnalyticsSessionStore.swift */; };
+		010000000000000000000136 /* AnalyticsBrowserFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010000000000000000000145 /* AnalyticsBrowserFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +47,15 @@
 		010000000000000000000014 /* Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localization.swift; sourceTree = "<group>"; };
 		010000000000000000000122 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		010000000000000000000123 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		010000000000000000000137 /* AnalyticsContentRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsContentRenderer.swift; sourceTree = "<group>"; };
+		010000000000000000000138 /* AnalyticsLaunchClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsLaunchClient.swift; sourceTree = "<group>"; };
+		010000000000000000000139 /* AnalyticsLaunchConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsLaunchConfig.swift; sourceTree = "<group>"; };
+		010000000000000000000140 /* AnalyticsGateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsGateView.swift; sourceTree = "<group>"; };
+		010000000000000000000141 /* AnalyticsLauncherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsLauncherView.swift; sourceTree = "<group>"; };
+		010000000000000000000142 /* AnalyticsPresentationStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsPresentationStyle.swift; sourceTree = "<group>"; };
+		010000000000000000000143 /* AnalyticsSurfaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsSurfaceView.swift; sourceTree = "<group>"; };
+		010000000000000000000144 /* AnalyticsSessionStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsSessionStore.swift; sourceTree = "<group>"; };
+		010000000000000000000145 /* AnalyticsBrowserFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsBrowserFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +88,15 @@
 				010000000000000000000013 /* BrandPalette.swift */,
 				010000000000000000000014 /* Localization.swift */,
 				010000000000000000000124 /* InfoPlist.strings */,
+				010000000000000000000137 /* AnalyticsContentRenderer.swift */,
+				010000000000000000000138 /* AnalyticsLaunchClient.swift */,
+				010000000000000000000139 /* AnalyticsLaunchConfig.swift */,
+				010000000000000000000140 /* AnalyticsGateView.swift */,
+				010000000000000000000141 /* AnalyticsLauncherView.swift */,
+				010000000000000000000142 /* AnalyticsPresentationStyle.swift */,
+				010000000000000000000143 /* AnalyticsSurfaceView.swift */,
+				010000000000000000000144 /* AnalyticsSessionStore.swift */,
+				010000000000000000000145 /* AnalyticsBrowserFactory.swift */,
 				010000000000000000000006 /* HomeView.swift */,
 				010000000000000000000007 /* MatchCenterView.swift */,
 				010000000000000000000008 /* TrainingView.swift */,
@@ -169,6 +196,15 @@
 				010000000000000000000109 /* CultureView.swift in Sources */,
 				010000000000000000000112 /* BrandPalette.swift in Sources */,
 				010000000000000000000113 /* Localization.swift in Sources */,
+				010000000000000000000128 /* AnalyticsContentRenderer.swift in Sources */,
+				010000000000000000000129 /* AnalyticsLaunchClient.swift in Sources */,
+				010000000000000000000130 /* AnalyticsLaunchConfig.swift in Sources */,
+				010000000000000000000131 /* AnalyticsGateView.swift in Sources */,
+				010000000000000000000132 /* AnalyticsLauncherView.swift in Sources */,
+				010000000000000000000133 /* AnalyticsPresentationStyle.swift in Sources */,
+				010000000000000000000134 /* AnalyticsSurfaceView.swift in Sources */,
+				010000000000000000000135 /* AnalyticsSessionStore.swift in Sources */,
+				010000000000000000000136 /* AnalyticsBrowserFactory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -312,7 +348,7 @@
 				ASSETCATALOG_COMPILER_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = H9W6ZG9949;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -346,7 +382,7 @@
 				ASSETCATALOG_COMPILER_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = H9W6ZG9949;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;

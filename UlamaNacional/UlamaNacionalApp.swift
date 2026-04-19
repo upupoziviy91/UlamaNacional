@@ -4,7 +4,12 @@ import SwiftUI
 struct UlamaNacionalApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            AnalyticsGateView(
+                config: .ulamaNacional,
+                requestReviewBeforeCheck: false
+            ) {
+                ContentView()
+            }
         }
     }
 }
